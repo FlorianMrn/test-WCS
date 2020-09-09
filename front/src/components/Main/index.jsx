@@ -13,7 +13,7 @@ const Main = () => {
                 </div>
             </form>
             <h2 className="p-8 text-2xl font-bold">Membres de l'équipage</h2>
-            <section className="w-full flex flex-col h-64 p-2">
+            <section className="w-full flex flex-col h-64 p-2 flex-wrap">
                 <div >Eleftheria</div>
                 <div >Gennadios</div>
                 <div >Lysimachos</div>

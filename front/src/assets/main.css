@@ -10379,6 +10379,10 @@ video {
   height: 100vh;
 }
 
+.h-want {
+  height: calc(100vh - 12rem);
+}
+
 .text-xs {
   font-size: 0.75rem;
 }
@@ -28603,6 +28607,10 @@ video {
     height: 100vh;
   }
 
+  .sm\:h-want {
+    height: calc(100vh - 12rem);
+  }
+
   .sm\:text-xs {
     font-size: 0.75rem;
   }
@@ -46795,6 +46803,10 @@ video {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-want {
+    height: calc(100vh - 12rem);
   }
 
   .md\:text-xs {
@@ -64991,6 +65003,10 @@ video {
     height: 100vh;
   }
 
+  .lg\:h-want {
+    height: calc(100vh - 12rem);
+  }
+
   .lg\:text-xs {
     font-size: 0.75rem;
   }
@@ -83183,6 +83199,10 @@ video {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-want {
+    height: calc(100vh - 12rem);
   }
 
   .xl\:text-xs {
