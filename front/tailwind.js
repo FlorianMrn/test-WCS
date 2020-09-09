@@ -289,6 +289,7 @@ module.exports = {
       ...theme('spacing'),
       full: '100%',
       screen: '100vh',
+      "want" : 'calc(100vh - 12rem)'
     }),
     inset: {
       '0': '0',
