@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Main = () => {
+const Main = ({ argonaute, setArgonaute }) => {
 
     return (
         <main className="flex justify-center items-center h-want flex-col max-w-screen-lg m-auto">
@@ -8,7 +8,8 @@ const Main = () => {
             <form className="flex flex-col mb-16">
                 <label htmlFor="name" className="text-center text-xl mb-2">Nom de l'Argonaute</label>
                 <div>
-                    <input id="name" name="name" type="text" placeholder="Charalampos" className="mr-3 border-solid border-black border-2 rounded p-1"/>
+                    <input value={argonaute} id="name" name="name" type="text" placeholder="Charalampos" className="mr-3 border-solid border-black border-2 rounded p-1" 
+                    onChange={({target}) => setArgonaute(target.value)}/>
                     <button type="submit" className="border-solid border-black border-2 rounded p-1">Envoyer</button>
                 </div>
             </form>
