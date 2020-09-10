@@ -5,12 +5,12 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
     return (
         <main className="flex justify-center items-center h-want flex-col max-w-screen-lg m-auto">
             <h2 className="p-8 text-2xl font-bold">Ajouter un(e) Argonaute</h2>
-            <form className="flex flex-col mb-16" onSubmit={createArgonaute}>
+            <form className="flex flex-col mb-10" onSubmit={createArgonaute}>
                 <label htmlFor="name" className="text-center text-xl mb-2">Nom de l'Argonaute</label>
                 <div>
-                    <input value={argonaute} id="name" name="name" type="text" placeholder="Charalampos" className="mr-3 border-solid border-black border-2 rounded p-1" 
+                    <input value={argonaute} id="name" name="name" type="text" placeholder="Charalampos" className="mr-3 rounded p-1 bg-gray-200 focus:bg-white focus:border-blue-400 focus:border-solid" 
                     onChange={({target}) => setArgonaute(target.value)}/>
-                    <button type="submit" className="border-solid border-black border-2 rounded p-1" onClick={createArgonaute}>Envoyer</button>
+                    <button type="submit" className="border-solid border-black border-2 rounded p-1 hover:bg-red-200" onClick={createArgonaute}>Envoyer</button>
                 </div>
             </form>
             <h2 className="p-4 text-2xl font-bold">Membres de l'équipage</h2>
