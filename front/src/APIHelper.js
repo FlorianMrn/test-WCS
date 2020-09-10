@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "/argonautes";
+const API_URL = "http://localhost:3000/argonautes";
 
 const createArgonaute = async (argonaute) => {
     const { data : newArgonaute } = await axios.post(API_URL, {

@@ -13,10 +13,38 @@ function App() {
   const [argonaute, setArgonaute] = useState("");
   const [argonautes, setArgonautes] = useState([]);
 
+  useEffect(() => {
+
+      const fetchArgonautes = async () => {
+        const argonautes = await APIHelper.getAllArgonautes()
+        setArgonautes(argonautes);
+      }
+
+      fetchArgonautes();
+
+  }, []);
+
+  const createArgonaute = async (e) => {
+    e.preventDefault()
+    if(!argonaute) {
+      alert("Please enter something")
+      return 
+    } 
+    
+    if (argonautes.some( ({ argo }) => argo === argonaute)) {
+      alert(`${argonaute} already exists`)
+      return
+    } 
+    
+    const newArgonaute = await APIHelper.createArgonaute(argonaute)
+    setArgonautes([...argonautes, newArgonaute])
+
+  };
+
   return (
     <div className="m-auto overflow-hidden">
       <Header />
-      <Main setArgonaute={setArgonaute} argonaute={argonaute}/>
+      <Main setArgonaute={setArgonaute} argonaute={argonaute} argonautes={argonautes} createArgonaute={createArgonaute}/>
       <Footer />
     </div>
   );
