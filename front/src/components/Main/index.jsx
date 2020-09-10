@@ -2,6 +2,7 @@ import React from 'react';
 
 const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
 
+    console.log(argonautes)
 
     return (
         <main className="flex justify-center items-center h-want flex-col max-w-screen-lg m-auto">
@@ -16,8 +17,9 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
             </form>
             <h2 className="p-8 text-2xl font-bold">Membres de l'équipage</h2>
             <section className="w-full flex flex-col h-64 p-2 flex-wrap">
-                {argonautes.map( ({_id, name}, i) => (
-                            <div key={i}>{name}</div>
+                {argonautes.map( (name) => (
+
+                            <div key={name}>{name}</div>
                 ))}
             </section>
         </main>
