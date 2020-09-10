@@ -5,7 +5,7 @@ Tools used
 
 - Backend: Node.js, Express.js, Mongoose
 - Database: MongoDB
-- Frontend: React, hooks
+- Frontend: React, hooks, axios
 
 How to run app locally
 --------------------
