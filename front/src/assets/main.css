@@ -18784,6 +18784,18 @@ video {
   }
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .animate-none {
   animation: none;
 }
@@ -18802,6 +18814,10 @@ video {
 
 .animate-bounce {
   animation: bounce 1s infinite;
+}
+
+.animate-scale {
+  animation: scale 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
 }
 
 @media (min-width: 640px) {
@@ -36999,6 +37015,10 @@ video {
 
   .sm\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .sm\:animate-scale {
+    animation: scale 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
   }
 }
 
@@ -55198,6 +55218,10 @@ video {
   .md\:animate-bounce {
     animation: bounce 1s infinite;
   }
+
+  .md\:animate-scale {
+    animation: scale 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -73396,6 +73420,10 @@ video {
   .lg\:animate-bounce {
     animation: bounce 1s infinite;
   }
+
+  .lg\:animate-scale {
+    animation: scale 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -91593,5 +91621,9 @@ video {
 
   .xl\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .xl\:animate-scale {
+    animation: scale 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) both;
   }
 }

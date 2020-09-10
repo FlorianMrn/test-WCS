@@ -60,7 +60,7 @@ function App() {
 
 
   return (
-    <div className="m-auto overflow-hidden">
+    <div className="m-auto overflow-hidden font-mono">
       <Header />
       <Main setArgonaute={setArgonaute} argonaute={argonaute} argonautes={argonautes} createArgonaute={createArgonaute}/>
       <Footer />
