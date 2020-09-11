@@ -17,7 +17,7 @@ function App() {
  
   const fetchArgo = async () => {
 
-    axios.get('http://localhost:3000/argonautes')
+    axios.get("/argonautes")
       .then( (res) => {
 
         let data = [];
@@ -48,7 +48,7 @@ function App() {
       name : argonaute
     }
 
-    axios.post('http://localhost:3000/argonautes', newArgonaute)
+    axios.post('/argonautes', newArgonaute)
       .then((res) => {
         console.log(res.data);
       })
