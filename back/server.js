@@ -30,6 +30,15 @@ app.post("/argonautes", async (req, res, next) => {
     }
 });
 
+app.delete("/argonautes/:id", async (res, req, next) => {
+    try {
+        await db.Argonaute.findByIdAndRemove(req.params.id)
+        return success(res, "Argonaute deleted !" )
+    } catch (err) {
+        next({ status: 400, message : "Failed to delete an Argonaute"})
+    }
+});
+
 app.use( (err, req, res, next) => {
     return res.status(err.status || 400 ).json({
         status : err.status || 400,
