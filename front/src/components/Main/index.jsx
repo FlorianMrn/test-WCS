@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMinusCircle } from "react-icons/fa";
 
 const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
 
@@ -14,10 +15,13 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
                 </div>
             </form>
             <h2 className="p-4 text-2xl font-bold">Membres de l'équipage</h2>
-            <section className="w-full flex flex-col h-64 p-2 flex-wrap">
+            <section className="w-full flex flex-col h-64 p-2 flex-wrap relative">
                 {argonautes.map( (name) => (
-
-                            <div className="shadow-lg p-2 mx-auto rounded my-2 animate-scale" key={name}>{name}</div>
+                            
+                            <div className="shadow-lg p-2 mx-auto rounded my-2 animate-scale relative" key={name}>
+                                {name}
+                                <FaMinusCircle className="absolute cursor-pointer top-0 right-0 text-gray-500"/>
+                            </div>
                 ))}
             </section>
         </main>
