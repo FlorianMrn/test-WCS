@@ -23,7 +23,7 @@ function App() {
         let data = [];
 
         for (let i = 0; i < res.data.length; i++) {
-            data.push(res.data[i].name)
+            data.push(res.data[i])
         }
 
         setArgonautes(data)
@@ -33,6 +33,7 @@ function App() {
 
   const createArgonaute = async (e) => {
     e.preventDefault()
+    const re = /([a-zA-Z])\w+/g
 
     if(!argonaute) {
       alert("Please enter something")
@@ -42,7 +43,10 @@ function App() {
       alert(`${argonaute} already exists`)
       return
     } 
-    else {
+    else if (!re.test(argonaute)) {
+      alert(`${argonaute} contains invalid character(s)`)
+
+    } else {
       const newArgonaute = {
         name : argonaute
       }
@@ -57,12 +61,21 @@ function App() {
     }
   };
 
+  const deleteArgonaute = async (id) => {
+    axios.delete(`/argonautes/${id}`)
+      .then((res) => {
+        console.log(res, "Argonaute deleted");
+      })
+      .catch((err) => {
+        console.error(err);
+      })
+  }
 
 
   return (
     <div className="m-auto overflow-hidden font-mono">
       <Header />
-      <Main setArgonaute={setArgonaute} argonaute={argonaute} argonautes={argonautes} createArgonaute={createArgonaute}/>
+      <Main setArgonaute={setArgonaute} argonaute={argonaute} argonautes={argonautes} createArgonaute={createArgonaute} deleteArgonaute={deleteArgonaute}/>
       <Footer />
     </div>
   );

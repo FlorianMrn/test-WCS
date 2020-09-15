@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const PORT = process.env.PORT || 3000;
 const db = require('./models/');
+var mongoose = require('mongoose'); //remove it as you might already it
+var ObjectId = mongoose.Types.ObjectId;
+
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -32,7 +35,7 @@ app.post("/argonautes", async (req, res, next) => {
 
 app.delete("/argonautes/:id", async (res, req, next) => {
     try {
-        await db.Argonaute.findByIdAndRemove(req.params.id)
+        await db.Argonaute.findByIdAndRemove({_id : req.params.id})
         return success(res, "Argonaute deleted !" )
     } catch (err) {
         next({ status: 400, message : "Failed to delete an Argonaute / " + err})

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaMinusCircle } from "react-icons/fa";
 
-const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
+const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute, deleteArgonaute }) => {
 
     return (
         <main className="flex justify-center items-center h-want flex-col max-w-screen-lg m-auto">
@@ -16,11 +16,11 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
             </form>
             <h2 className="p-4 text-2xl font-bold">Membres de l'équipage</h2>
             <section className="w-full flex flex-col h-64 p-2 flex-wrap relative">
-                {argonautes.map( (name) => (
+                {argonautes.map( ({_id, name}) => (
                             
-                            <div className="shadow-lg p-2 mx-auto rounded my-2 animate-scale relative" key={name}>
+                            <div className="shadow-lg p-2 mx-auto rounded my-2 animate-scale relative" key={_id}>
                                 {name}
-                                <FaMinusCircle className="absolute cursor-pointer top-0 right-0 text-gray-500 hover:text-red-600"/>
+                                <FaMinusCircle className="absolute cursor-pointer top-0 right-0 text-gray-500 hover:text-red-600" onClick={() => deleteArgonaute(_id)}/>
                             </div>
                 ))}
             </section>
