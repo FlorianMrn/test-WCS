@@ -17,7 +17,7 @@ app.get("/argonautes", async (req, res, next) => {
         const argonautes = await db.Argonaute.find({})
         return success(res, argonautes)
     } catch (err) {
-        next({ status : 400, message : "failed to get Argonautes"})
+        next({ status : 400, message : "failed to get Argonautes / " + err})
     }
 });
 
@@ -26,7 +26,7 @@ app.post("/argonautes", async (req, res, next) => {
         const argonaute = await db.Argonaute.create(req.body)
         return success(res, argonaute)
     } catch (err) {
-        next({ status: 400, message : "Failed to create an Argonaute"})
+        next({ status: 400, message : "Failed to create an Argonaute / " + err})
     }
 });
 
@@ -35,7 +35,7 @@ app.delete("/argonautes/:id", async (res, req, next) => {
         await db.Argonaute.findByIdAndRemove(req.params.id)
         return success(res, "Argonaute deleted !" )
     } catch (err) {
-        next({ status: 400, message : "Failed to delete an Argonaute"})
+        next({ status: 400, message : "Failed to delete an Argonaute / " + err})
     }
 });
 

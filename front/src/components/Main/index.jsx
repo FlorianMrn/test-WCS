@@ -7,7 +7,7 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
         <main className="flex justify-center items-center h-want flex-col max-w-screen-lg m-auto">
             <h2 className="p-8 text-2xl font-bold">Ajouter un(e) Argonaute</h2>
             <form className="flex flex-col mb-10" onSubmit={createArgonaute}>
-                <label htmlFor="name" className="text-center text-xl mb-2">Nom de l'Argonaute</label>
+                <label htmlFor="name" className="text-xl mb-2">Nom de l'Argonaute :</label>
                 <div>
                     <input value={argonaute} id="name" name="name" type="text" placeholder="Charalampos" className="mr-3 rounded p-1 bg-gray-200 focus:bg-white focus:border-blue-400 focus:border-solid" 
                     onChange={({target}) => setArgonaute(target.value)}/>
@@ -20,7 +20,7 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute }) => {
                             
                             <div className="shadow-lg p-2 mx-auto rounded my-2 animate-scale relative" key={name}>
                                 {name}
-                                <FaMinusCircle className="absolute cursor-pointer top-0 right-0 text-gray-500"/>
+                                <FaMinusCircle className="absolute cursor-pointer top-0 right-0 text-gray-500 hover:text-red-600"/>
                             </div>
                 ))}
             </section>
