@@ -53,11 +53,12 @@ function App() {
 
       axios.post('/argonautes', newArgonaute)
         .then((res) => {
-          console.log(res.data);
+          setArgonautes([...argonautes, res.data]);
+          setArgonaute("");
         })
-
-      setArgonautes([...argonautes, argonaute]);
-      setArgonaute("");
+        .catch((err) => {
+          console.error(err);
+        })
     }
   };
 
@@ -65,6 +66,7 @@ function App() {
     axios.delete(`/argonautes/${id}`)
       .then((res) => {
         console.log(res, "Argonaute deleted");
+        setArgonautes(argonautes.filter(({_id : i}) => id !== i))
       })
       .catch((err) => {
         console.error(err);
