@@ -38,23 +38,23 @@ function App() {
       alert("Please enter something")
       return 
     } 
-    
-    if (argonautes.some( (argo) => argo === argonaute)) {
+    else if (argonautes.some( (argo) => argo === argonaute)) {
       alert(`${argonaute} already exists`)
       return
     } 
-    
-    const newArgonaute = {
-      name : argonaute
+    else {
+      const newArgonaute = {
+        name : argonaute
+      }
+
+      axios.post('/argonautes', newArgonaute)
+        .then((res) => {
+          console.log(res.data);
+        })
+
+      setArgonautes([...argonautes, argonaute]);
+      setArgonaute("");
     }
-
-    axios.post('/argonautes', newArgonaute)
-      .then((res) => {
-        console.log(res.data);
-      })
-
-    setArgonautes([...argonautes, argonaute]);
-    setArgonaute("");
   };
 
 
