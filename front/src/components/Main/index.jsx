@@ -15,10 +15,10 @@ const Main = ({ argonaute, setArgonaute, argonautes, createArgonaute, deleteArgo
                 </div>
             </form>
             <h2 className="p-4 text-2xl font-bold">Membres de l'équipage</h2>
-            <section className="w-full flex flex-col h-64 p-2 flex-wrap relative">
+            <section className="w-full flex h-64 p-2 flex-wrap relative justify-around">
                 {argonautes.map( ({_id, name}) => (
                             
-                            <div className="shadow-lg p-2 mx-auto rounded my-2 animate-scale relative" key={_id}>
+                            <div className="shadow-lg p-2 rounded my-2 animate-scale relative w-1/4 h-8 mr-1 text-center font-bold flex justify-center" key={_id}>
                                 {name}
                                 <FaMinusCircle className="absolute cursor-pointer top-0 right-0 text-gray-500 hover:text-red-600" onClick={() => deleteArgonaute(_id)}/>
                             </div>

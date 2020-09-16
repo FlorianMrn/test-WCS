@@ -75,7 +75,7 @@ function App() {
 
 
   return (
-    <div className="m-auto overflow-hidden font-mono">
+    <div className="m-auto font-mono">
       <Header />
       <Main setArgonaute={setArgonaute} argonaute={argonaute} argonautes={argonautes} createArgonaute={createArgonaute} deleteArgonaute={deleteArgonaute}/>
       <Footer />
